@@ -1,0 +1,14 @@
+{
+  "razaoSocial": "Empresa Exemplo S.A.",
+  "nomeFantasia": "Exemplo",
+  "cnpj": "12.345.678/0001-90",
+  "endereco": "Av. das Nações, 1000 - São Paulo/SP",
+  "contatoNome": "Fulana da Silva",
+  "contatoEmail": "fulana@example.com",
+  "q1": "A empresa possui código de conduta publicado e aderido por todos os colaboradores.",
+  "q2": "Há canal de denúncias terceirizado e com anonimato garantido.",
+  "q3": "Não há histórico de sanções administrativas por corrupção.",
+  "q4": "Política anticorrupção atualizada em 2024 e treinamentos anuais.",
+  "observacoes": "Empresa auditada pela ACME Auditores em 2023."
+}
+

@@ -1,0 +1,74 @@
+openapi: 3.0.3
+info:
+  title: API Questionário Anticorrupção
+  version: 1.0.0
+  description: |
+    Serviço HTTP que processa respostas do questionário anticorrupção,
+    gera análise (OpenAI) e envia e-mail com o resultado.
+servers:
+  - url: http://localhost:3001
+paths:
+  /health:
+    get:
+      summary: Verifica saúde do serviço
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok:
+                    type: boolean
+  /functions/v1/process-questionnaire:
+    options:
+      summary: Preflight CORS
+      responses:
+        '200':
+          description: OK
+    post:
+      summary: Processa o questionário
+      description: |
+        Aceita os dados do formulário, solicita uma análise à OpenAI
+        e envia e-mail com a análise e as respostas.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                razaoSocial:
+                  type: string
+                cnpj:
+                  type: string
+      responses:
+        '200':
+          description: Sucesso
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  message:
+                    type: string
+                  analysis:
+                    type: string
+                  emailId:
+                    type: string
+        '500':
+          description: Erro interno
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  error:
+                    type: string
+

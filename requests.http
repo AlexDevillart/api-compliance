@@ -1,0 +1,23 @@
+### Health check
+GET http://localhost:3001/health
+
+### Preflight (CORS)
+OPTIONS http://localhost:3001/functions/v1/process-questionnaire
+Origin: http://localhost:5173
+Access-Control-Request-Method: POST
+Access-Control-Request-Headers: Content-Type, Authorization, X-Client-Info, Apikey
+
+### Envio do questionário
+POST http://localhost:3001/functions/v1/process-questionnaire
+Content-Type: application/json
+
+{
+  "razaoSocial": "Empresa Exemplo S.A.",
+  "cnpj": "12.345.678/0001-90",
+  "q1": "A empresa possui código de conduta publicado e aderido por todos os colaboradores.",
+  "q2": "Há canal de denúncias terceirizado e com anonimato garantido.",
+  "q3": "Não há histórico de sanções administrativas por corrupção.",
+  "contatoNome": "Fulana da Silva",
+  "contatoEmail": "fulana@example.com"
+}
+
