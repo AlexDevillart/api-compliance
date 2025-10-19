@@ -1,0 +1,11 @@
+{
+  "functions": {
+    "api**.js": {
+      "runtime": "nodejs20.x"
+    }
+  },
+  "routes": [
+    { "src": "health", "dest": "apiindex.js" },
+    { "src": "analisar", "dest": "apiindex.js" }
+  ]
+}
